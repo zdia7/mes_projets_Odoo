@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="department_list_view">
+      <field name="name">Department list</field>
+      <field name="model">university.department</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="code"/>
+        </tree>
+      </field>
+    </record>
+
+     <record model="ir.ui.view" id="department_form_view">
+      <field name="name">Department form</field>
+      <field name="model">university.department</field>
+      <field name="arch" type="xml">
+        <form>
+         <group>
+          <field name="name"/>
+          <field name="code"/>
+         </group> 
+        </form>
+      </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="department_action_window">
+      <field name="name">department window</field>
+      <field name="res_model">university.department</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+  
+
+    <!-- Top menu item -->
+  
+    <!-- Top menu item -->
+  
+    <!-- <menuitem name="university" id="university.menu_root"/>
+   -->
+    <!-- menu categories -->
+  
+    <menuitem name="Departments" id="university_department_cat" parent="university.menu_root"/>
+    
+    <!-- actions -->
+    
+    <menuitem name="List of departments" id="university_department_list" parent="university_department_cat"
+              action="department_action_window"/>
+    <!-- <menuitem name="Server to list" id="module_test" parent="module_test.menu_2"
+              action="module_test.action_server"/> -->
+    
+  </data>
+</odoo>

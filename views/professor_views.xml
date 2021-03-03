@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="student_list_view">
+      <field name="name">Professor list</field>
+      <field name="model">university.professor</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="first_name"/>
+          <field name="last_name"/>
+          <field name="sexe"/>
+          <field name="identity_card"/>
+          <field name="birthday"/>
+          <field name="start_date"/>
+        </tree>
+      </field>
+    </record>
+
+     <record model="ir.ui.view" id="professor_form_view">
+      <field name="name">Professor form</field>
+      <field name="model">university.professor</field>
+      <field name="arch" type="xml">
+        <form>
+         <group>
+          <field name="first_name"/>
+          <field name="last_name"/>
+          <field name="sexe"/>
+          <field name="identity_card"/>
+          <field name="address"/>
+          <field name="birthday"/>
+          <field name="start_date"/>
+          <field name="department_id"/>
+          <field name="classroom_id"/>
+          <field name="department_id"/>
+          <field name="subject_id"/>
+         </group> 
+        </form>
+      </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="professor_action_window">
+      <field name="name">professor window</field>
+      <field name="res_model">university.professor</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+  
+
+    <!-- Top menu item -->
+  
+    <!-- <menuitem name="professor" id="module_test.menu_root"/> -->
+  
+    <!-- menu categories -->
+  
+    <!-- <menuitem name="Menu 1" id="module_test.menu_1" parent="module_test.menu_root"/> -->
+    <menuitem name="Professors" id="university_professor_cat" parent="university.menu_root"/>
+    
+    <!-- actions -->
+    
+    <menuitem name="List of professors" id="university_professor_list" parent="university_professor_cat"
+              action="professor_action_window"/>
+    <!-- <menuitem name="Server to list" id="module_test" parent="module_test.menu_2"
+              action="module_test.action_server"/> -->
+    
+  </data>
+</odoo>
